@@ -38,8 +38,8 @@ alias yaourt='yaourt --export /tmp'
 
 # One-liners
 alias myip='curl http://ipecho.net/plain; echo'
-alias freeze='pkill -19'
-alias thaw='pkill -18'
+alias freeze='pkill -STOP'
+alias thaw='pkill -CONT'
 alias cls="echo -ne '\033c'"
 alias mirrorlist="sudo bash -c 'curl https://www.archlinux.org/mirrorlist/?country=US\&protocol=http\&ip_version=4\&use_mirror_status=on | sed 's/#//' | sed 's/#/##/' > /etc/pacman.d/mirrorlist'";
 
