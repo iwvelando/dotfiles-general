@@ -130,3 +130,8 @@ man() {
     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
     man "$@"
 }
+
+blocked() {
+	echo -e "DstPort\tBlocks"
+	for dpt in $(dmesg | grep 'output reject ' | grep -oE 'DPT=[0-9]+' | awk -F '=' '{print $2}' | sort | uniq); do echo -e "$dpt\t$(dmesg | grep 'output reject ' | grep DPT=$dpt | wc -l)"; done | sort -n -r -k 2
+}
