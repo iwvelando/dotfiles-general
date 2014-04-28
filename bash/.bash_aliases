@@ -41,7 +41,8 @@ alias myip='curl http://ipecho.net/plain; echo'
 alias freeze='pkill -STOP'
 alias thaw='pkill -CONT'
 alias cls="echo -ne '\033c'"
-alias mirrorlist="sudo bash -c 'curl https://www.archlinux.org/mirrorlist/?country=US\&protocol=http\&ip_version=4\&use_mirror_status=on | sed 's/#//' | sed 's/#/##/' > /etc/pacman.d/mirrorlist'";
+alias mirrorlist="sudo bash -c 'curl https://www.archlinux.org/mirrorlist/?country=US\&protocol=http\&ip_version=4\&use_mirror_status=on | sed 's/#//' | sed 's/#/##/' > /etc/pacman.d/mirrorlist'"
+alias lsmodall="find /lib/modules/$(uname -r)/kernel/ -type f -name '*.ko.gz' -exec basename {} \; | less"
 
 # Programs
 alias py='/usr/bin/python2'
