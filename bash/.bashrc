@@ -2,6 +2,11 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+[ -d "$HOME/bin" ] && [[ ! $(echo $PATH | grep "$HOME/bin") ]] && PATH="$HOME/bin:$PATH"
+
+gemsdir=$(ruby -rubygems -e "puts Gem.user_dir")/bin
+[ -d "$gemsdir" ] && [[ ! $(echo $PATH | grep "$gemsdir") ]] && PATH="$gemsdir:$PATH"
+
 export SUDO_EDITOR=rvim
 export EDITOR="vim"
 
