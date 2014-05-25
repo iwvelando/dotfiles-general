@@ -34,6 +34,8 @@ alias sshfs='sshfs -o compression=yes,reconnect'
 alias vim='vim -O'
 alias tmux='tmux -2'
 
+alias diff='diff --unchanged-line-format="" --old-line-format="%2dn -%L" --new-line-format="%2dn +%L"'
+
 alias yaourt='yaourt --export /tmp'
 
 # One-liners
